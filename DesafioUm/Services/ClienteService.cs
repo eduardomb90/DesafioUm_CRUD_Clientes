@@ -14,10 +14,26 @@ public class ClienteService : IClienteService
         Clientes.ForEach(cliente => System.Console.WriteLine(cliente));
     }
 
-    public Cliente EditarCliente(Cliente cliente)
+    public Cliente EditarCliente(Cliente cliente, string nome)
     {
         var editaCliente = Clientes.Find(c => c.Id == cliente.Id);
+        System.Console.WriteLine(editaCliente);
+
+        if(editaCliente is ClienteFisico)
+        {
+            var clienteFisico = editaCliente as ClienteFisico;
+            clienteFisico.CorrigirNome(nome);
+        }
+
+        if(editaCliente is ClienteJuridico)
+        {
+            var clienteJuridico = editaCliente as ClienteJuridico;
+            clienteJuridico.CorrigirRazaoSocial(nome);
+        }
         
+
+        return editaCliente;
+
     }
 
     public Cliente RemoverCliente(string email)
