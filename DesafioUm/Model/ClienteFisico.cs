@@ -10,13 +10,8 @@ public class ClienteFisico : Cliente
     [Required]
     public DateTime Nascimento { get; private set; }
     public int Idade { get; }
-
-
-    public void CorrigirNome(string nome)
-    {
-        Nome = nome;
-    }
-    public ClienteFisico(string nome, string cpf, DateTime anoNascimento, int idade, Endereco endereco, string email) : base(endereco, email)
+    
+    public ClienteFisico(string nome, string cpf, DateTime anoNascimento, Endereco endereco, string email) : base(endereco, email)
     {
         if(!(nome.Equals(string.Empty) &&
             cpf.Equals(string.Empty)))
@@ -30,6 +25,11 @@ public class ClienteFisico : Cliente
                 Idade = CalculaIdade(anoNascimento);
             }
         
+    }
+
+    public void CorrigirNome(string nome)
+    {
+        Nome = nome;
     }
 
     private int CalculaIdade(DateTime anoNascimento)

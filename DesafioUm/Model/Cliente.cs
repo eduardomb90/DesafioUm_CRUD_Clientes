@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-public abstract class Cliente
+public class Cliente
 {
     [Required]
     public Guid Id { get; }

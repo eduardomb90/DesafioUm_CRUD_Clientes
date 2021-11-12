@@ -3,6 +3,17 @@ using System.ComponentModel.DataAnnotations;
 
 public class Endereco
 {
+    public Endereco(string cep, string logradouro, string numero, string? complemento, string? referencia, string cidade, string estado)
+    {
+        Cep = cep;
+        Logradouro = logradouro;
+        Numero = numero;
+        Complemento = complemento;
+        Referencia = referencia;
+        Cidade = cidade;
+        Estado = estado;    
+    }
+    
     [Required]
     public Guid Id { get; }
     [Required]    
