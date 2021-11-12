@@ -4,6 +4,11 @@ public class ClienteService : IClienteService
 {
     public List<Cliente> Clientes { get; private set; }
 
+    public ClienteService()
+    {
+        Clientes = new List<Cliente>();
+    }
+    
     public void AdicionarCliente(Cliente cliente)
     {
         Clientes.Add(cliente);
@@ -11,7 +16,7 @@ public class ClienteService : IClienteService
 
     public void ListarClientes()
     {
-        Clientes.ForEach(cliente => System.Console.WriteLine(cliente));
+        Clientes.ForEach(cliente => System.Console.WriteLine(cliente.ToString()));
     }
 
     public Cliente EditarCliente(Cliente cliente, string nome)

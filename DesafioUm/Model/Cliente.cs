@@ -15,7 +15,7 @@ public class Cliente
 
     public Cliente(Endereco endereco, string email)
     {
-        if(email.Equals(string.Empty))
+        if(!(email.Equals(string.Empty)))
         {
             Id = Guid.NewGuid();
             Email = email;

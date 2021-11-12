@@ -36,7 +36,7 @@ public class ClienteFisico : Cliente
     {
         var anos = DateTime.Now.Year - anoNascimento.Year;
 
-        if(DateTime.Now.DayOfYear > anoNascimento.DayOfYear)
+        if(DateTime.Now.DayOfYear <= anoNascimento.DayOfYear)
             return anos--;
 
         return anos; 

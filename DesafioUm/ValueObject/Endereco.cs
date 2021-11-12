@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class Endereco
 {
-    public Endereco(string cep, string logradouro, string numero, string? complemento, string? referencia, string cidade, string estado)
+    public Endereco(string cep, string logradouro, string numero, string cidade, string estado, string complemento = null, string referencia = null)
     {
         Cep = cep;
         Logradouro = logradouro;
